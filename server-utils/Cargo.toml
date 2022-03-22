@@ -17,11 +17,16 @@ globset = "0.4"
 jsonrpc-core = { version = "18.0.0", path = "../core" }
 lazy_static = "1.1.0"
 log = "0.4"
-tokio = { version = "1", features = ["rt-multi-thread", "io-util", "time", "net"] }
-tokio-util = { version = "0.6", features = ["codec"] }
-tokio-stream = { version = "0.1", features = ["net"] }
+#tokio = { version = "1", features = ["rt-multi-thread", "io-util", "time", "net"] }
+#tokio-util = { version = "0.6", features = ["codec"] }
+#tokio-stream = { version = "0.1", features = ["net"] }
+
+tokio = {git="https://github.com/Polkadex-Substrate/tokio.git", branch="raoul/tokio-1.14.0-sgx",features = ["rt-multi-thread", "io-util", "time", "net"]}
+tokio-util = {git="https://github.com/Polkadex-Substrate/tokio.git", branch="raoul/tokio-1.14.0-sgx",features = ["codec"]}
+tokio-stream = {git="https://github.com/Polkadex-Substrate/tokio.git", branch="raoul/tokio-1.14.0-sgx",features = ["net"]}
 
 unicase = "2.0"
 
 [badges]
 travis-ci = { repository = "paritytech/jsonrpc", branch = "master"}
+
